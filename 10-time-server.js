@@ -10,9 +10,10 @@ zero-filled to 2 integers. For example:
 */
 var net = require('net')
 var moment = require('moment')
+var port = process.argv[2]
 
 var server = net.createServer(function (socket) {
   socket.end(moment().format('YYYY-MM-DD HH:mm') + '\n')
 })
 
-server.listen(8000)
+server.listen(port)
