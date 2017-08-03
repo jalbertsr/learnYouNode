@@ -8,9 +8,9 @@ Your server should listen on port 8000.
 */
 var fs = require('fs')
 var http = require('http')
-
+var port = process.argv[3]
 var file = process.argv[2]
 
 http.createServer(function (req, res) {
   fs.createReadStream(file).pipe(res)
-}).listen(8000)
+}).listen(port)

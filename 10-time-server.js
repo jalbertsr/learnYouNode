@@ -1,4 +1,3 @@
-
 /*
 Write a TCP time server!
 Your server should listen to TCP connections on port 8000. For each
@@ -12,8 +11,8 @@ var net = require('net')
 var moment = require('moment')
 var port = process.argv[2]
 
-var server = net.createServer(function (socket) {
-  socket.end(moment().format('YYYY-MM-DD HH:mm') + '\n')
-})
+net.createServer(function (socket) {
+  socket.end(moment().format('YYYY-MM-DD HH:mm') + '\n') // strftime('%Y-%m-%d: %H:%M', new Date())
+}).listen(port)
 
-server.listen(port)
+ 
